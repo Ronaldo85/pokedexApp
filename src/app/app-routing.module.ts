@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'charmander',
+    loadChildren: () => import('./pokemons/charmander/charmander.module').then( m => m.CharmanderPageModule)
+  },
 ];
 
 @NgModule({
