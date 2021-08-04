@@ -43,6 +43,55 @@ export class HomePage {
         'Bug', 'Flying'
       ]
     },
+    {
+      numero: '007',
+      nome: 'Squirtle',
+      foto: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png',
+      tipos: [
+        'Water'
+      ]
+    },
+    {
+      numero: '012',
+      nome: 'Butterfree',
+      foto: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/012.png',
+      tipos: [
+        'Bug', 'Flying'
+      ]
+    },
+    {
+      numero: '016',
+      nome: 'Pidgey',
+      foto: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png',
+      tipos: [
+        'Normal', 'Flying'
+      ]
+    },
+    {
+      numero: '023',
+      nome: 'Ekans',
+      foto: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/023.png',
+      tipos: [
+        'Poison'
+      ]
+    },
+    {
+      numero: '048',
+      nome: 'Venonat',
+      foto: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/048.png',
+      tipos: [
+        'Bug', 'Poison'
+      ]
+    },
+    {
+      numero: '052',
+      nome: 'Meowth',
+      foto: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png',
+      tipos: [
+        'Normal'
+      ]
+    },
+
 
   ];
 
