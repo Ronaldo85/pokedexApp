@@ -16,7 +16,7 @@ export class HomePage {
       nome: 'Charmander',
       foto: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png',
       tipos: [
-        'Fire'
+        'Fogo'
       ]
     },
     {
@@ -24,7 +24,7 @@ export class HomePage {
       nome: 'Pikachu',
       foto: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png',
       tipos: [
-        'Eletric'
+        'Electric'
       ]
     },
     {
@@ -95,6 +95,26 @@ export class HomePage {
 
   ];
 
-  constructor() {}
+  listaPokemonFiltrada = [];
 
+  constructor() {
+  this.retornarPokemon();
+  }
+
+  retornarPokemon(): void {
+    this.listaPokemonFiltrada = this.listaPokemon;
+  }
+
+  buscarPokemon(evento): void {
+    this.retornarPokemon(); // Coloca todos os pokemons na lista filtrada
+
+    // Pega o valor digitado no campo de busca
+    const busca: string = evento.target.value;
+
+    if(busca && busca.trim() !== '') { // Testa se tem alguma coisa no campo
+      this.listaPokemonFiltrada = this.listaPokemon.filter(pokemon =>
+        pokemon.nome.toLowerCase().includes(busca.trim().toLowerCase())
+      );
+    }
+  }
 }
