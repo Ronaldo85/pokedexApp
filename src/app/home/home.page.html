@@ -1,37 +1,49 @@
-<ion-header >
-  <ion-toolbar color="vermelho">
-    <ion-title>Pokedex</ion-title>
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      Pokedex App
+    </ion-title>
   </ion-toolbar>
-
-  <ion-toolbar>
-    <ion-title >App</ion-title>
-  </ion-toolbar>
-
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar (ionChange)="buscarPokemon($event)" placeholder="Buscar pokemons"></ion-searchbar>
+
+  <ion-searchbar (ionChange)="buscarPokemon($event)" placeholder="Buscar Pokemons"></ion-searchbar>
 
   <ion-list>
 
-    <ion-item *ngFor="let pokemon of listaPokemonFiltrada" lines="full" class="no-padding" routerLink="/charmander">
-
+    <ion-item *ngFor="let pokemon of listaPokemonFiltrada" lines="full" class="ion-no-padding"
+      (click)="abrirPokemon(pokemon)">
       <ion-thumbnail slot="start">
-        <img [src]="pokemon.foto">
+        <img [src]="pokemon.sprites.front_default">
       </ion-thumbnail>
-
       <ion-label>
         <div>
-          <h3>{{ pokemon.nome }}</h3>
-          <ion-badge *ngFor="let tipo of pokemon.tipos" [color]="tipo | lowercase">
-            {{tipo}}
+          <h3>{{pokemon.name | titlecase}}</h3>
+          <ion-badge *ngFor="let tipo of pokemon.types" [color]="tipo.type.name | lowercase">
+            {{tipo.type.name | titlecase}}
           </ion-badge>
         </div>
       </ion-label>
-      <ion-chip [color]="pokemon.tipos[0] | lowercase">
-        <ion-label>{{ pokemon.numero }}</ion-label>
+
+      <ion-chip [color]="pokemon.types[0].type.name | lowercase">
+        <ion-label>{{pokemon.id}}</ion-label>
       </ion-chip>
     </ion-item>
 
+
   </ion-list>
+
+  <ion-item>
+    <ion-button slot="start" color="dark" (click)="buscarPokemonAPI(offset - 10)">
+      <ion-icon slot="icon-only" name="chevron-back-circle"></ion-icon>
+    </ion-button>
+
+    <ion-label class="ion-text-center">{{totalPokemons}}</ion-label>
+
+    <ion-button slot="end" color="dark" (click)="buscarPokemonAPI(offset + 10)">
+      <ion-icon slot="icon-only" name="chevron-forward-circle"></ion-icon>
+    </ion-button>
+  </ion-item>
+
 </ion-content>

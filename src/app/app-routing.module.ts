@@ -11,9 +11,9 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  {
-    path: 'charmander',
-    loadChildren: () => import('./pokemons/charmander/charmander.module').then( m => m.CharmanderPageModule)
+   {
+    path: 'detalhes-pokemon',
+    loadChildren: () => import('./pokemons/detalhe-pokemon/detalhe-pokemon.module').then( m => m.DetalhePokemonPage)
   },
 ];
 
